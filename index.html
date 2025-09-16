@@ -179,88 +179,170 @@
 
 
 
+<style>
+  .audio-row-caption{
+    text-align:center;      /* <- centers the filename */
+    font-weight:600;        /* optional: make it stand out */
+    margin:12px 0 10px;     /* spacing above the players */
+  }
+</style>
 
-    <!-- Footsteps section -->
-    <h2 class="section-title">Footsteps</h2>
 
-    <div class="column-section">
-        <!-- Column 1 -->
-        <div class="column">
-            <h4 class="title is-4">Reference</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Footsteps/1.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Footsteps/1.png" alt="Description 1">
-            </figure>
-            <h4 class="title is-4">Reference</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Footsteps/2.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Footsteps/2.png" alt="Description 1">
-            </figure>
-            <h4 class="title is-4">Reference</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Footsteps/3.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Footsteps/3.png" alt="Description 1">
-            </figure>
-        </div>
-        
-    
-        <!-- Column 2 -->
-        <div class="column">
-            <h4 class="title is-4">DDSP</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Footsteps/ddsp-1.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Footsteps/ddsp-1.png" alt="Description 2">
-            </figure>
-            <h4 class="title is-4">DDSP</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Footsteps/ddsp-2.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Footsteps/ddsp-2.png" alt="Description 2">
-            </figure>
-            <h4 class="title is-4">DDSP</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Footsteps/ddsp-3.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Footsteps/ddsp-3.png" alt="Description 2">
-            </figure>
-        </div>
-    
-        <!-- Column 3 -->
-        <div class="column">
-            <h4 class="title is-4">DDSP-SFX</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Footsteps/ddspvae-1.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Footsteps/ddsp-vae-1.png" alt="Description 3">
-            </figure>
-            <h4 class="title is-4">DDSP-SFX</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Footsteps/ddspvae-2.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Footsteps/ddsp-vae-2.png" alt="Description 3">
-            </figure>
-            <h4 class="title is-4">DDSP-SFX</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Footsteps/ddspvae-3.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Footsteps/ddsp-vae-3.png" alt="Description 3">
-            </figure>
-        </div>
-    </div>
-    <hr>
+<!-- T2M section -->
+<h1 class="section">Text-to-moving sound generation</h2>
+
+<!-- (keep your existing <style> that centers .audio-row-caption) -->
+
+<!-- Row: syn_1_e0_v1.wav -->
+<p class="audio-row-caption">Siren drifts left back from below very close to far.</p>
+<div class="column-section">
+  <div class="column"><h4 class="title is-4">Mono</h4>
+    <audio preload="metadata" controls><source src="mono/syn_1_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+  <div class="column"><h4 class="title is-4">Naive</h4>
+    <audio preload="metadata" controls><source src="naive/syn_1_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+  <div class="column"><h4 class="title is-4">Trajectory</h4>
+    <audio preload="metadata" controls><source src="trajectory/syn_1_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+</div>
+<hr>
+
+<!-- Row: syn_1063_e0_v1.wav -->
+<p class="audio-row-caption">Motorcycle calls left to right back ending close.</p>
+<div class="column-section">
+  <div class="column"><h4 class="title is-4">Mono</h4>
+    <audio preload="metadata" controls><source src="mono/syn_1063_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+  <div class="column"><h4 class="title is-4">Naive</h4>
+    <audio preload="metadata" controls><source src="naive/syn_1063_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+  <div class="column"><h4 class="title is-4">Trajectory</h4>
+    <audio preload="metadata" controls><source src="trajectory/syn_1063_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+</div>
+<hr>
+
+<!-- Row: syn_1072_e0_v1.wav -->
+<p class="audio-row-caption">Race car moves back to front right ending far.</p>
+<div class="column-section">
+  <div class="column"><h4 class="title is-4">Mono</h4>
+    <audio preload="metadata" controls><source src="mono/syn_1072_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+  <div class="column"><h4 class="title is-4">Naive</h4>
+    <audio preload="metadata" controls><source src="naive/syn_1072_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+  <div class="column"><h4 class="title is-4">Trajectory</h4>
+    <audio preload="metadata" controls><source src="trajectory/syn_1072_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+</div>
+<hr>
+
+<!-- Row: syn_1087_e0_v1.wav -->
+<p class="audio-row-caption">Rooster crows back to right back ending close.</p>
+<div class="column-section">
+  <div class="column"><h4 class="title is-4">Mono</h4>
+    <audio preload="metadata" controls><source src="mono/syn_1087_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+  <div class="column"><h4 class="title is-4">Naive</h4>
+    <audio preload="metadata" controls><source src="naive/syn_1087_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+  <div class="column"><h4 class="title is-4">Trajectory</h4>
+    <audio preload="metadata" controls><source src="trajectory/syn_1087_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+</div>
+<hr>
+
+<!-- Row: syn_1233_e0_v1.wav -->
+<p class="audio-row-caption">Jet engine hums front from below from a distance to nearby, from far to close.</p>
+<div class="column-section">
+  <div class="column"><h4 class="title is-4">Mono</h4>
+    <audio preload="metadata" controls><source src="mono/syn_1233_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+  <div class="column"><h4 class="title is-4">Naive</h4>
+    <audio preload="metadata" controls><source src="naive/syn_1233_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+  <div class="column"><h4 class="title is-4">Trajectory</h4>
+    <audio preload="metadata" controls><source src="trajectory/syn_1233_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+</div>
+<hr>
+
+<!-- Row: syn_1256_e0_v1.wav -->
+<p class="audio-row-caption">Motorboat calls left back to right back from a distance to nearby, from far to close.</p>
+<div class="column-section">
+  <div class="column"><h4 class="title is-4">Mono</h4>
+    <audio preload="metadata" controls><source src="mono/syn_1256_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+  <div class="column"><h4 class="title is-4">Naive</h4>
+    <audio preload="metadata" controls><source src="naive/syn_1256_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+  <div class="column"><h4 class="title is-4">Trajectory</h4>
+    <audio preload="metadata" controls><source src="trajectory/syn_1256_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+</div>
+<hr>
+
+<!-- Row: syn_1278_e0_v1.wav -->
+<p class="audio-row-caption">Bleat fades back ending close.</p>
+<div class="column-section">
+  <div class="column"><h4 class="title is-4">Mono</h4>
+    <audio preload="metadata" controls><source src="mono/syn_1278_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+  <div class="column"><h4 class="title is-4">Naive</h4>
+    <audio preload="metadata" controls><source src="naive/syn_1278_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+  <div class="column"><h4 class="title is-4">Trajectory</h4>
+    <audio preload="metadata" controls><source src="trajectory/syn_1278_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+</div>
+<hr>
+
+<!-- Row: syn_1307_e0_v1.wav -->
+<p class="audio-row-caption">Horse echoes front to right from below far.</p>
+<div class="column-section">
+  <div class="column"><h4 class="title is-4">Mono</h4>
+    <audio preload="metadata" controls><source src="mono/syn_1307_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+  <div class="column"><h4 class="title is-4">Naive</h4>
+    <audio preload="metadata" controls><source src="naive/syn_1307_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+  <div class="column"><h4 class="title is-4">Trajectory</h4>
+    <audio preload="metadata" controls><source src="trajectory/syn_1307_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+</div>
+<hr>
+
+<!-- Row: syn_1380_e0_v1.wav -->
+<p class="audio-row-caption">Helicopter moves back to front left above.</p>
+<div class="column-section">
+  <div class="column"><h4 class="title is-4">Mono</h4>
+    <audio preload="metadata" controls><source src="mono/syn_1380_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+  <div class="column"><h4 class="title is-4">Naive</h4>
+    <audio preload="metadata" controls><source src="naive/syn_1380_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+  <div class="column"><h4 class="title is-4">Trajectory</h4>
+    <audio preload="metadata" controls><source src="trajectory/syn_1380_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+</div>
+<hr>
+
+<!-- Row: syn_1523_e0_v1.wav -->
+<p class="audio-row-caption">Ducks rings right back to back close.</p>
+<div class="column-section">
+  <div class="column"><h4 class="title is-4">Mono</h4>
+    <audio preload="metadata" controls><source src="mono/syn_1523_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+  <div class="column"><h4 class="title is-4">Naive</h4>
+    <audio preload="metadata" controls><source src="naive/syn_1523_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+  <div class="column"><h4 class="title is-4">Trajectory</h4>
+    <audio preload="metadata" controls><source src="trajectory/syn_1523_e0_v1.wav" type="audio/wav"></audio>
+  </div>
+</div>
+<hr>
+
 
 
   <footer class="footer">
