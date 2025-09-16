@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>DDSP-SFX</title>
+    <title>Text2Move</title>
 
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
@@ -25,7 +25,7 @@
                 <span class="author-block">
                 Shaofan Yang, <sup>2</sup></span>
                 <span class="author-block">
-                Kai Li<sup>1,2*</sup>,</span>
+                Kai Li, <sup>2</sup></span>
                 <span class="author-block">
                 Xu Li<sup>2</sup>
                 </span>
@@ -51,25 +51,130 @@
 
     <hr>
 
-    <h1 class="section-title">Transient Modelling</h1>
+
+    <h1 class="section-title">Trajectory Prediction</h1>
+
+<style>
+  /* Basic styling for a content container to simulate text width */
+  .content-container {
+    max-width: 800px; /* Example: Adjust this to your desired text width */
+    margin: 0 auto; /* Centers the container */
+    padding: 20px;
+    line-height: 1.6;
+    font-family: sans-serif;
+    color: #333;
+  }
+
+  /* Table-specific styles */
+  table {
+    width: 100%; /* Make table take 100% of its parent container's width */
+    border-collapse: collapse;
+    margin: 20px 0; /* Add some vertical spacing */
+    font-family: sans-serif;
+    font-size: 0.9em; /* Slightly smaller font for tables */
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  .category-row {
+    background-color: #e0e0e0;
+    font-weight: bold;
+    text-align: left;
+  }
+</style>
+
+<div class="content-container">
+
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Accuracy</th>
+        <th>Macro-F1</th>
+        <th>MAE</th>
+        <th>RA-MAE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="category-row">
+        <td colspan="5">Naive Model (End Point)</td>
+      </tr>
+      <tr>
+        <td>Azimuth</td>
+        <td>98.2%</td>
+        <td>98.5%</td>
+        <td>5.789°</td>
+        <td>2.339°</td>
+      </tr>
+      <tr>
+        <td>Elevation</td>
+        <td>98.0%</td>
+        <td>98.1%</td>
+        <td>6.431°</td>
+        <td>1.352°</td>
+      </tr>
+      <tr>
+        <td>Distance</td>
+        <td>87.5%</td>
+        <td>87.1%</td>
+        <td>0.166</td>
+        <td>0.013</td>
+      </tr>
+      <tr class="category-row">
+        <td colspan="5">Whole-trajectory prediction</td>
+      </tr>
+      <tr>
+        <td>Azimuth</td>
+        <td>75.9%</td>
+        <td>75.1%</td>
+        <td>18.53°</td>
+        <td>15.52°</td>
+      </tr>
+      <tr>
+        <td>Elevation</td>
+        <td>61.2%</td>
+        <td>65.9%</td>
+        <td>28.75°</td>
+        <td>21.44°</td>
+      </tr>
+      <tr>
+        <td>Distance</td>
+        <td>66.7%</td>
+        <td>52.1%</td>
+        <td>1.601</td>
+        <td>0.365</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    
+  </p>
+
+</div>
+
+
+    <h1 class="section-title">Temporal Alignment</h1>
     <div class='section'>
     <figure class="image">
-        <img src="images/Transient model.png" alt="Description 1">
-
-        In the preprocessing stage, we extract a guiding amplitude vector from the target sound effects following the steps as shown above: computing STFT, performing a 
-        harmonic-percussive source separation of the signal, computing the spectral peak of the percussive signal, and then getting the amplitude vector of the place 
-        where it detects a spectral peak. The decoder uses this information to output the required amplitude and frequency for the sinusoidal modelling in the DCT domain.
-        Once the sinusoids are synthesized, we convert them to time domain using IDCT, which would result in various kinds of transient signals in different time frames.
+        <img src="images/alignment_issue.png" alt="Description 1">
+        Because text-to-audio generative models are generally trained without explicit or precise temporal information, above we show a common issue in synthesizing 
+        variable-length latent representations using latent diffusion model. With the original pre-trained transformer-based VAE model, you could copy and paste the silent 
+        part of the latent space to any other region to obtain a silence elsewhere. In 'VAE reconstructed' we copied and pasted the first 200 frames to (200,400)
+        frames, and you could see this part gets silenced out smoothly. However if we do so to the latent space generated from the LDM, you may notice the artifacts
+        in Mel-spectrograms that result in harmonic glitchies. Therefore, we have fine-tuned the pretrained the latent diffusion model from Make-an-Audio 2 by modifying 
+        its latent space temporally. 
         </div>
 
-    <h1 class="section-title">Synthesis results</h1>
-
-    <div class="section">
-        <p>Below we show our synthesis results. We use some reference SFX tracks as guiding sounds and extract their acoustic features including fundamental frequency, 
-            amplitude, transient components, and mel-spectrograms. We fed these features into our model to perform timbre transfer. Ideally the generated sound should be 
-            identical or close to the reference soundtrack. 
-            </p>
-        </div>
 
     <!-- Gunshots section -->
     <h2 class="section-title">Gunshots</h2>
