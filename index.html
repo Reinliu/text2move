@@ -157,7 +157,9 @@
   </table>
 
   <p>
-    
+    We have trained a trajectory prediction model which predicts the azimuth, elevation and distance of an audio object give text prompts. In addition, 
+    we have also trained a naive model that predicts only the spatial attributes of the onset and offset of the trajectory for comparison. Above are the 
+    prediction results. The RA-MAE stands for Range-Aware MAE, and the error is measured relative to the nearest boundary within that range. 
   </p>
 
 </div>
@@ -176,65 +178,6 @@
         </div>
 
 
-    <!-- Gunshots section -->
-    <h2 class="section-title">Gunshots</h2>
-
-    <div class="column-section">
-        <!-- Column 1 -->
-        <div class="column">
-            <h4 class="title is-4">Reference</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Gunshots/037.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Gunshots/037.png" alt="Description 1">
-            </figure>
-            <h4 class="title is-4">Reference</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Gunshots/048.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Gunshots/048.png" alt="Description 1">
-            </figure>
-        </div>
-        
-    
-        <!-- Column 2 -->
-        <div class="column">
-            <h4 class="title is-4">DDSP</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Gunshots/DDSP_037.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Gunshots/ddsp-037.png" alt="Description 2">
-            </figure>
-            <h4 class="title is-4">DDSP</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Gunshots/DDSP_048.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Gunshots/ddsp-048.png" alt="Description 2">
-            </figure>
-        </div>
-    
-        <!-- Column 3 -->
-        <div class="column">
-            <h4 class="title is-4">DDSP-SFX</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Gunshots/DDSP-VAE_037.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Gunshots/ddsp-vae-037.png" alt="Description 3">
-            </figure>
-            <h4 class="title is-4">DDSP-SFX</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Gunshots/DDSP-VAE_048.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Gunshots/ddsp-vae-048.png" alt="Description 3">
-            </figure>
-        </div>
-    </div>
 
 
     <!-- Footsteps section -->
@@ -317,99 +260,6 @@
             </figure>
         </div>
     </div>
-    
-
-    <!-- Motors section -->
-    <h2 class="section-title">Motors</h2>
-
-    <div class="column-section">
-        <!-- Column 1 -->
-        <div class="column">
-            <h4 class="title is-4">Reference</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Motors/1.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Motors/1.png" alt="Description 1">
-            </figure>
-            <h4 class="title is-4">Reference</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Motors/2.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Motors/2.png" alt="Description 1">
-            </figure>
-            <h4 class="title is-4">Reference</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Motors/3.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Motors/3.png" alt="Description 1">
-            </figure>
-        </div>
-        
-    
-        <!-- Column 2 -->
-        <div class="column">
-            <h4 class="title is-4">DDSP</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Motors/DDSP-1.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Motors/DDSP-1.png" alt="Description 2">
-            </figure>
-            <h4 class="title is-4">DDSP</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Motors/DDSP-2.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Motors/DDSP-2.png" alt="Description 2">
-            </figure>
-            <h4 class="title is-4">DDSP</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Motors/DDSP-3.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Motors/DDSP-3.png" alt="Description 2">
-            </figure>
-        </div>
-    
-        <!-- Column 3 -->
-        <div class="column">
-            <h4 class="title is-4">DDSP-SFX</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Motors/DDSP-VAE_1.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Motors/DDSP-VAE_1.png" alt="Description 3">
-            </figure>
-            <h4 class="title is-4">DDSP-SFX</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Motors/DDSP-VAE_2.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Motors/DDSP-VAE_2.png" alt="Description 3">
-            </figure>
-            <h4 class="title is-4">DDSP-SFX</h4>
-            <audio preload='metadata' controls>
-                <source src='Reconstruction/Motors/DDSP-VAE_3.wav' type='audio/wav'>
-            </audio>
-            <figure class="image">
-                <img src="Reconstruction/Motors/DDSP-VAE_3.png" alt="Description 3">
-            </figure>
-        </div>
-    </div>
-    <div class="section">
-        <p>Above we could see that for impulsive sounds (footsteps and gunshots), DDSP tends to rely heavily on its harmonic synthesizer, with very audible
-            harmonic artifacts. This is because we set the number of harmonics for the harmonic synthesizer as 100, for unity purposes. 
-            The decoder by itself doesn't learn to attenuate the harmonic synthesizer very well with this structure. Our approach could synthesize inharmonic 
-            sounds easily with an indicative harmonic attentuator. Further, our approach seems to synthesize impulsive sounds with sharper attacks. This could
-            be seen in gunshot sounds which contain many fast repetitive impulses. 
-            </p>
-        </div>
-
-
-
     <hr>
 
 
